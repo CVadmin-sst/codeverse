@@ -24,6 +24,7 @@
 
 html{
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 html::-webkit-scrollbar {
@@ -38,6 +39,16 @@ html{
 body{
     font-family: 'Roboto', sans-serif;
     background-color: var(--background-darker);
+    height: 100%;
+}
+
+.typed-cursor{
+    font-size: inherit;
+    line-height: inherit;
+    vertical-align: middle; 
+    display: inline;
+    position: relative;
+    top: -12px;
 }
 
 /* NAVBAR */
@@ -166,65 +177,87 @@ nav{
 
 /* MAIN CONTENT */
 .main-content{
-    padding: 50px 40px;
+    padding: 70px 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 40px;
+    align-items: center;
+    height: 80%;
 }
 
 .title{
     font-size: 2rem;
     color: var(--contrasting);
-    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form-container p{
     margin-bottom: 30px;
 }
 
-/* DETAILS */
-.account-container{
-    margin-bottom: 60px;
+img{
+    max-width: 550px;
+    width: 100%;
+    margin: auto;
 }
 
-.details{
+/* FORM CONTAINER */
+.inputs{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
-.indiv-detail{
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-}
-
-.label{
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#logout{
+#question{
+    padding: 10px;
+    outline: none;
     border: none;
-    padding: 10px 20px;
     border-radius: 8px;
-    font-size: 18px;
-    background-color: #d84f4f;
-    color: var(--background);
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+#description{
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    height: 200px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+}
+
+#submit{
+    padding: 8px 20px;
     border: 2px solid transparent;
+    background-color: var(--text);
+    color: var(--background);
+    font-size: 16px;
+    border-radius: 8px;
     transition: all 0.3s ease;
 }
 
-#logout:active, #logout:hover{
-    border-color: #d84f4f;
-    color: #d84f4f;
-    background-color: var(--background-darker);
+#submit:hover, #submit:active{
+    border-color: var(--text);
+    color: var(--text);
+    background-color: var(--background);
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 1000px){
-    .indiv-detail{
-        width: 70%;
+@media (max-width: 900px){
+    .main-content{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    img{
+        display: none;
     }
 }
-
-@media (max-width: 800px){
+@media (max-width: 800px) {
     .hide{
         display: none;
     }
@@ -232,18 +265,10 @@ nav{
     .menu-button{
         display: block;
     }
-
-    .indiv-detail{
-        width: 100%;
-    }
 }
 
 @media (max-width: 500px){
     .sidebar{
         width: 100%;
-    }
-
-    .main-content{
-        padding: 50px 20px;
     }
 }

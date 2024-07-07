@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --text:#2b2c34;
+    --background: #fffffe;
+    --contrasting: #060a75;
+    --background-dark: #fbfbfb;
+    --background-darker: #f6f6f6;
+    --light-green: #c2ffc5;
+    --light-orange: #ffdac2;
+    --light-blue: #c2caff;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+html{
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+    height: 100%;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-darker);
+    height: 100%;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FORM CONTAINER */
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    background-color: var(--background);
+    border-radius: 10px;
+    width: fit-content;
+    height: fit-content;
+    min-width: 400px;
+}
+
+.form-container h1{
+    font-size: 2.5rem;
+    color: var(--contrasting);
+    margin-bottom: 30px;
+}
+
+/* INPUTS */
+.inputs{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#email, #password, #confirm-password, #username{
+    background-color: #eee;
+    border: none;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 4px;
+    outline: none;
+}
+
+.password-stuff{
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.password-stuff span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+#show-password:checked{
+    accent-color: var(--contrasting);
+}
+
+.link{
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.link:hover, .link:active{
+    opacity: 0.6;
+    text-decoration: underline;
+}
+
+#login, #sign-up{
+    padding: 8px;
+    font-size: 18px;
+    width: 100%;
+    border: none;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    background-color: var(--text);
+    color: var(--background);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+#login:hover, #login:active{
+    opacity: 0.6;
+}
+

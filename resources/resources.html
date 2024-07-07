@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="coding tutorials">
+    <meta name="keywords" content="python, coding">
+    <title>Resources | CodeVerse</title>
+    <link rel="stylesheet" href="resources.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="navigation">
+        <nav>
+            <div class="logo-section">
+                <a href="../index.html" class="logo">CodeVerse</a>
+            </div>
+            
+            <ul class="sidebar">
+                <i class='bx bx-x'></i>
+                <li class="sidebar-link"><a href="">Lessons</a></li>
+                <li class="sidebar-link"><a href="">Practise</a></li>
+                <li class="sidebar-link"><a href="resources.css">Resources</a></li>
+                <li class="sidebar-link"><a href="../helpdesk/helpdesk.html">Helpdesk</a></li>
+                <li class="sidebar-link"><a href="../account/account.html">Account</a></li>
+            </ul>
+
+            <ul class="nav-links">
+                <li class="link hide"><a href="">Lessons</a></li>
+                <li class="link hide"><a href="resources.html">Resources</a></li>
+                <li class="link hide"><a href="">Practise</a></li>
+                <li class="link hide"><a href="../helpdesk/helpdesk.html">Helpdesk</a></li>
+            </ul>
+
+            <a href="../account/account.html" class="btn hide">Account</a>
+            <span class="menu-button"><i class='bx bx-menu' onclick="showSidebar()"></i></span>
+        </nav>
+    </div>
+
+    <div class="welcome">
+        <h1>Resources</h1>
+        <p>Here are some resources that you can refer to when needed</p>
+    </div>
+
+    <div class="main-content">
+        <h2 class="title">Python</h2>
+        <div class="resource-cards python-resources">
+            <a class="card" href="">
+                <i class='bx bx-spreadsheet'></i>
+                <h4>Python's official documentation</h4>
+            </a>
+            <a class="card" href="">
+                <i class='bx bx-spreadsheet'></i>
+                <h4>w3schools documentation</h4>
+            </a>
+            <a class="card" href="">
+                <i class='bx bx-spreadsheet'></i>
+                <h4>DevDocs python documentation</h4>
+            </a>
+            <a class="card" href="">
+                <i class='bx bx-movie-play'></i>
+                <h4>Bro Code's youtube video</h4>
+            </a>
+            <a class="card" href="">
+                <i class='bx bx-movie-play'></i>
+                <h4>Mosh's python tutorial</h4>
+            </a>
+        </div>
+
+        <h2 class="title">Java</h2>
+        <div class="resource-cards java-resources">
+            <a class="card" href="">
+                <i class='bx bx-spreadsheet'></i>
+                <h4>Java's official documentation</h4>
+            </a>
+            <a class="card" href="">
+                <i class='bx bx-spreadsheet'></i>
+                <h4>w3schools documentation</h4>
+            </a>
+            <a class="card" href="">
+                <i class='bx bx-spreadsheet'></i>
+                <h4>TutorialsPoint documentation</h4>
+            </a>
+            <a class="card" href="">
+                <i class='bx bx-movie-play'></i>
+                <h4>Bro Code's youtube video</h4>
+            </a>
+            <a class="card" href="">
+                <i class='bx bx-movie-play'></i>
+                <h4>Mosh's java tutorial</h4>
+            </a>
+        </div>
+
+        <h2 class="title">C++</h2>
+        <div class="resource-cards cpp-resources">
+            <a class="card" href="">
+                <i class='bx bx-spreadsheet'></i>
+                <h4>DevDocs C++ documentation</h4>
+            </a>
+            <a class="card" href="">
+                <i class='bx bx-spreadsheet'></i>
+                <h4>w3schools documentation</h4>
+            </a>
+            <a class="card" href="">
+                <i class='bx bx-spreadsheet'></i>
+                <h4>Microsoft's C++ documentation</h4>
+            </a>
+            <a class="card" href="">
+                <i class='bx bx-movie-play'></i>
+                <h4>Bro Code's youtube video</h4>
+            </a>
+            <a class="card" href="">
+                <i class='bx bx-movie-play'></i>
+                <h4>Mosh's C++ tutorial</h4>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const sidebar = document.querySelector(".sidebar");
+        const showSidebar = document.querySelector(".bx-menu");
+        const hideSidebar = document.querySelector(".bx-x");
+
+        showSidebar.onclick = function (){
+            sidebar.style.display = "flex";
+        }
+
+        hideSidebar.onclick = function (){
+            sidebar.style.display = "none";
+        }
+    </script>
+</body>
+</html>

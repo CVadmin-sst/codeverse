@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
 <body>
     <div class="navigation">
@@ -19,54 +20,107 @@
                 <a href="index.html" class="logo">CodeVerse</a>
             </div>
             
-            <ul class="nav-links">
-                <li class="link"><a href="">Home</a></li>
-                <li class="link"><a href="">Lessons</a></li>
-                <li class="link"><a href="">Resources</a></li>
-                <li class="link"><a href="">Practise</a></li>
+            <ul class="sidebar">
+                <i class='bx bx-x'></i>
+                <li class="sidebar-link"><a href="" class="working-link">Lessons</a></li>
+                <li class="sidebar-link"><a href="resources/resources.html" class="working-link">Resources</a></li>
+                <li class="sidebar-link"><a href="" class="working-link">Practise</a></li>
+                <li class="sidebar-link"><a href="helpdesk/helpdesk.html" class="working-link">Helpdesk</a></li>
+                <li class="sidebar-link"><a href="account/login.html" class="sidebar-login working-link">Log in</a></li>
             </ul>
 
-            <a href="account/login.html" class="btn">Log in</a>
+            <ul class="nav-links">
+                <li class="link hide"><a href="" class="working-link">Lessons</a></li>
+                <li class="link hide"><a href="resources/resources.html" class="working-link">Resources</a></li>
+                <li class="link hide"><a href="" class="working-link">Practise</a></li>
+                <li class="link hide"><a href="helpdesk/helpdesk.html" class="working-link">Helpdesk</a></li>
+            </ul>
+
+            <div class="account-section">
+                <a href="account/login.html" class="btn hide">Log in</a>
+            </div>
+            <span class="menu-button"><i class='bx bx-menu' onclick="showSidebar()"></i></span>
         </nav>
     </div>
 
     <div class="welcome">
-        <h1>Welcome to the <span>CodeVerse</span></h1>
+        <h1><span class="typed"></span></h1>
         <p>This is where your coding journey begins...</p>
     </div>
 
     <div class="main-content">
         <div class="courses">
             <h2 class="title">Our Courses</h2>
-            <div class="card-container">
-                <div class="card">
+            <div class="courses-card-container">
+                <div class="courses-card">
                     <i class='bx bxl-python'></i>
                     <div>
                         <h4 class="card-title">Intro to Python</h4>
-                        <p class="card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae perspiciatis, reprehenderit quo officia dignissimos sunt</p>
+                        <p class="card-desc">A beginner's guide to python. This will help you to get a good grasp of python</p>
                     </div>
                 </div>
         
-                <div class="card">
+                <div class="courses-card">
                     <i class='bx bxl-java'></i>
                     <div>
                         <h4 class="card-title">Intro to Java</h4>
-                        <p class="card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae perspiciatis, reprehenderit quo officia dignissimos sunt</p>
+                        <p class="card-desc">A beginner firendly introduction to java. This will help you get started with coding in java</p>
                     </div>
                 </div>
         
-                <div class="card">
+                <div class="courses-card">
                     <i class='bx bxl-c-plus-plus'></i>
                     <div>
                         <h4 class="card-title">Intro to C++</h4>
-                        <p class="card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae perspiciatis, reprehenderit quo officia dignissimos sunt</p>
+                        <p class="card-desc">A beginner level course that teaches C++. This will help you to understand the basics of C++</p>
                     </div>
                 </div>
             </div>
-            <a href="">View more -></a>
         </div>
 
-        
+        <div class="features">
+            <h2 class="title">Our Features</h2>
+            <div class="features-card-container">
+                <div class="features-card">
+                    <i class='bx bx-chalkboard'></i>
+                    <h4 class="card-title">Lessons</h4>
+                    <p class="card-desc">Our beginner friendly and easy to follow along lessons are bound to help you start on your journey to coding!</p>
+                </div>
+
+                <div class="features-card">
+                    <i class='bx bx-book-open'></i>
+                    <h4 class="card-title">Resources</h4>
+                    <p class="card-desc">If you need other resources alongside our lessons, our resources page will definitely have a few handy links!</p>
+                </div>
+
+                <div class="features-card">
+                    <i class='bx bx-edit'></i>
+                    <h4 class="card-title">Practise</h4>
+                    <p class="card-desc">Learning coding definitely requires practise in order to get better. Be sure to check out our practises page!</p>
+                </div>
+
+                <div class="features-card">
+                    <i class='bx bx-help-circle'></i>
+                    <h4 class="card-title">Helpdesk</h4>
+                    <p class="card-desc">If you ever need help with anything you don't understand, don't hesitate to check out our helpdesk!</p>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        const sidebar = document.querySelector(".sidebar");
+        const showSidebar = document.querySelector(".bx-menu");
+        const hideSidebar = document.querySelector(".bx-x");
+
+        showSidebar.onclick = function (){
+            sidebar.style.display = "flex";
+        }
+
+        hideSidebar.onclick = function (){
+            sidebar.style.display = "none";
+        }
+    </script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
