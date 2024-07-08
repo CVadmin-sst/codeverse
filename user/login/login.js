@@ -59,7 +59,7 @@ login.addEventListener("click", () => {
                             const idToken = userCredential.accessToken;
                             localStorage.setItem('authToken', idToken);
                             alert('Logged-in successfully!')
-                            window.location.href = "../index.html";
+                            window.location.href = "../../index.html";
                         } else {
                             alert("User data not found");
                         }
