@@ -49,7 +49,7 @@ onAuthStateChanged(auth, (user) => {
 logout.addEventListener("click", function(){
     auth.signOut().then(() => {
         window.alert("Successfully signed out!");
-        window.location.href = "../index.html";
+        window.location.href = "../../index.html";
     }).catch((error) => {
         window.error("Sign out error", error);
     })
