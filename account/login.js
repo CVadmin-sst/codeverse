@@ -14,7 +14,7 @@ showPassword.onclick = function(){
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 import { getDatabase, get, ref, update } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -41,34 +41,40 @@ login.addEventListener("click", () => {
     var emailValue = document.getElementById("email").value;
     var passwordValue = document.getElementById("password").value;
 
-    signInWithEmailAndPassword(auth, emailValue, passwordValue)
-        .then((userCredential) => {
-            const user = userCredential.user;
-            const userRef = ref(database, 'users/' + user.uid);
-            get(userRef)
-                .then((snapshot) => {
-                    const userData = snapshot.val();
-                    if (userData){
-                        update(ref(database, 'users/' + user.uid), {
-                            email: emailValue,
-                        });
-
-                        // Store the user's authentication token in local storage
-                        const idToken = userCredential.accessToken;
-                        localStorage.setItem('authToken', idToken);
-                        alert('Logged-in successfully!')
-                        window.location.href = "../index.html";
-                    } else {
-                        alert("User data not found");
-                    }
-                })
-                .catch((error) => {
-                    alert("Error fetching user data: " + error.message);
-                });
+    setPersistence(auth, browserSessionPersistence)
+        .then(() => {
+            signInWithEmailAndPassword(auth, emailValue, passwordValue)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                const userRef = ref(database, 'users/' + user.uid);
+                get(userRef)
+                    .then((snapshot) => {
+                        const userData = snapshot.val();
+                        if (userData){
+                            update(ref(database, 'users/' + user.uid), {
+                                email: emailValue,
+                            });
+    
+                            // Store the user's authentication token in local storage
+                            const idToken = userCredential.accessToken;
+                            localStorage.setItem('authToken', idToken);
+                            alert('Logged-in successfully!')
+                            window.location.href = "../index.html";
+                        } else {
+                            alert("User data not found");
+                        }
+                    })
+                    .catch((error) => {
+                        alert("Error fetching user data: " + error.message);
+                    });
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                alert(errorMessage);
+            });
         })
         .catch((error) => {
-            const errorMessage = error.message;
-            alert(errorMessage);
-        });
-
+            var errorCode = error.message;
+            window.alert(errorCode);
+        })
 })
