@@ -16,17 +16,29 @@
     <div class="navigation">
         <nav>
             <div class="logo-section">
-                <a href="index.html" class="logo">CodeVerse</a>
+                <a href="/index.html" class="logo">CodeVerse</a>
             </div>
             
-            <ul class="nav-links">
-                <li class="link"><a href="">Home</a></li>
-                <li class="link"><a href="">Lessons</a></li>
-                <li class="link"><a href="">Resources</a></li>
-                <li class="link"><a href="">Practise</a></li>
+            <ul class="sidebar">
+                <i class='bx bx-x'></i>
+                <li class="sidebar-link"><a href="" class="working-link">Lessons</a></li>
+                <li class="sidebar-link"><a href="../resources/resources.html" class="working-link">Resources</a></li>
+                <li class="sidebar-link"><a href="" class="working-link">Practise</a></li>
+                <li class="sidebar-link"><a href="../helpdesk/helpdesk.html" class="working-link">Helpdesk</a></li>
+                <li class="sidebar-link"><a href="../account/login.html" class="sidebar-login working-link">Log in</a></li>
             </ul>
 
-            <a href="account/login.html" class="btn">Log in</a>
+            <ul class="nav-links">
+                <li class="link hide"><a href="" class="working-link">Lessons</a></li>
+                <li class="link hide"><a href="../resources/resources.html" class="working-link">Resources</a></li>
+                <li class="link hide"><a href="" class="working-link">Practise</a></li>
+                <li class="link hide"><a href="../helpdesk/helpdesk.html" class="working-link">Helpdesk</a></li>
+            </ul>
+
+            <div class="account-section">
+                <a href="../account/account.html" class="btn hide">Account</a>
+            </div>
+            <span class="menu-button"><i class='bx bx-menu' onclick="showSidebar()"></i></span>
         </nav>
     </div>
 
@@ -45,17 +57,17 @@
                     </div>
                     <button class="card-btn" id="python-lessons-btn">Show all lessons</button>
                     <div class="python-lessons" id="python-lessons">
-                        <a href="course/python/lesson0.html" class="card-desc" id="lesson-0">Lesson 0</a>
-                        <a href="course/python/lesson1.html" class="card-desc" id="lesson-1">Lesson 1</a>
-                        <a href="course/python/lesson2.html" class="card-desc" id="lesson-2">Lesson 2</a>
-                        <a href="course/python/lesson3.html" class="card-desc" id="lesson-3">Lesson 3</a>
-                        <a href="course/python/lesson4.html" class="card-desc" id="lesson-4">Lesson 4</a>
-                        <a href="course/python/lesson5.html" class="card-desc" id="lesson-5">Lesson 5</a>
-                        <a href="course/python/lesson6.html" class="card-desc" id="lesson-6">Lesson 6</a>
-                        <a href="course/python/lesson7.html" class="card-desc" id="lesson-7">Lesson 7</a>
-                        <a href="course/python/lesson8.html" class="card-desc" id="lesson-8">Lesson 8</a>
-                        <a href="course/python/lesson9.html" class="card-desc" id="lesson-9">Lesson 9</a>
-                        <a href="course/python/lesson10.html" class="card-desc" id="lesson-10">Lesson 10</a>
+                        <a href="python/lesson0.html" class="card-desc" id="lesson-0">Lesson 0</a>
+                        <a href="python/lesson1.html" class="card-desc" id="lesson-1">Lesson 1</a>
+                        <a href="python/lesson2.html" class="card-desc" id="lesson-2">Lesson 2</a>
+                        <a href="python/lesson3.html" class="card-desc" id="lesson-3">Lesson 3</a>
+                        <a href="python/lesson4.html" class="card-desc" id="lesson-4">Lesson 4</a>
+                        <a href="python/lesson5.html" class="card-desc" id="lesson-5">Lesson 5</a>
+                        <a href="python/lesson6.html" class="card-desc" id="lesson-6">Lesson 6</a>
+                        <a href="python/lesson7.html" class="card-desc" id="lesson-7">Lesson 7</a>
+                        <a href="python/lesson8.html" class="card-desc" id="lesson-8">Lesson 8</a>
+                        <a href="python/lesson9.html" class="card-desc" id="lesson-9">Lesson 9</a>
+                        <a href="python/lesson10.html" class="card-desc" id="lesson-10">Lesson 10</a>
                     </div>
                 </div>
         
@@ -78,6 +90,19 @@
         </div>
         
     </div>
+    <script>
+        const sidebar = document.querySelector(".sidebar");
+        const showSidebar = document.querySelector(".bx-menu");
+        const hideSidebar = document.querySelector(".bx-x");
+
+        showSidebar.onclick = function (){
+            sidebar.style.display = "flex";
+        }
+
+        hideSidebar.onclick = function (){
+            sidebar.style.display = "none";
+        }
+    </script>
     <script type="module" src="lessons.js"></script>
 </body>
 </html>

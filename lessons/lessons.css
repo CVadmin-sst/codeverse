@@ -24,6 +24,7 @@
 
 html{
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 html::-webkit-scrollbar {
@@ -37,8 +38,8 @@ html{
 
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: var(--background);
-    height: 200vh;
+    background-color: var(--background-darker);
+    height: 100%;
 }
 
 /* NAVBAR */
@@ -102,6 +103,67 @@ nav{
     border-color: var(--text);
     color: var(--text);
     background-color: var(--background);
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px  rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+    padding: 30px;
+    list-style: none;
+    transition: all 0.5s ease;
+}
+
+.sidebar-link{
+    transition: all ease 0.3s;
+}
+
+.sidebar-link:hover, .sidebar-link:active{
+    transform: translateY(-5px);
+}
+
+.sidebar-link a{
+    text-decoration: none;
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.menu-button{
+    display: none;
+}
+
+.bx-menu{
+    font-size: 2rem;
+    padding: 15px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.bx-menu:hover, .bx-menu:active{
+    background-color: var(--background-darker);
+}
+
+.bx-x{
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.bx-x:hover, .bx-x:active{
+    background-color: var(--background-darker);
 }
 
 /* MAIN CONTENT */
@@ -202,4 +264,42 @@ nav{
 
 .python-lessons {
     display: none;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1050px){
+    .card-container{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .hide{
+        display: none;
+    }
+
+    .menu-button{
+        display: block;
+    }
+}
+
+@media (max-width: 720px){
+    .card-container{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 500px){ 
+    .sidebar{
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px){
+    .main-content{
+        padding: 60px 20px;
+    }
 }

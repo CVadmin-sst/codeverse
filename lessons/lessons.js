@@ -68,7 +68,7 @@ onAuthStateChanged(auth, async () => {
           pythonQuicklink.innerText = "Go to your current lesson"
         }
 
-        pythonQuicklink.href = "course/python/lesson" + pythonLessonNo + ".html";
+        pythonQuicklink.href = "python/lesson" + pythonLessonNo + ".html";
         
         if (pythonLessonNo < 10) {
           lesson10.innerHTML = locked + "Lesson 10";
