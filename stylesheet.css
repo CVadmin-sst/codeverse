@@ -177,6 +177,7 @@ nav{
 
 .welcome{
     background-color: var(--background-dark);
+    padding: 0 20px;
     height: 70vh;
     display: flex;
     justify-content: center;
@@ -201,6 +202,7 @@ nav{
 .welcome p{
     color: var(--text);
     font-size: 1.5rem;
+    text-align: center;
 }
 
 /* MAIN CONTENT */

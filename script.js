@@ -57,9 +57,9 @@ onAuthStateChanged(auth, (user) => {
             })
         })
         sidebarLogin.innerText = "Account";
-        sidebarLogin.href = "account/account.html";
+        sidebarLogin.href = "user/account/account.html";
         button.innerText = "Account";
-        button.href = "account/account.html";
+        button.href = "user/account/account.html";
     } else {
         var text = new Typed(".typed", {
             strings: ["Welcome to the <span>CodeVerse</span>"],
