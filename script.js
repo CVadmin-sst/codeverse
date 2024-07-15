@@ -28,7 +28,6 @@ const auth = getAuth();
 let welcomeHeader = document.querySelector(".welcome h1");
 let links = document.querySelectorAll(".working-link");
 let button = document.querySelector(".btn");
-let sidebarLogin = document.querySelector(".sidebar-login");
 
 function secureLinks(link){
     link.addEventListener('click', function(event){
@@ -56,10 +55,9 @@ onAuthStateChanged(auth, (user) => {
                 typeSpeed: 50
             })
         })
-        sidebarLogin.innerText = "Account";
-        sidebarLogin.href = "user/account/account.html";
         button.innerText = "Account";
         button.href = "user/account/account.html";
+        console.log(uid);
     } else {
         var text = new Typed(".typed", {
             strings: ["Welcome to the <span>CodeVerse</span>"],

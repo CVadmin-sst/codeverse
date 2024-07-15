@@ -42,15 +42,6 @@ body{
     height: 100%;
 }
 
-.typed-cursor{
-    font-size: inherit;
-    line-height: inherit;
-    vertical-align: middle; 
-    display: inline;
-    position: relative;
-    top: -12px;
-}
-
 /* NAVBAR */
 .navigation{
     width: 100%;

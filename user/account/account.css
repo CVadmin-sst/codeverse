@@ -169,7 +169,7 @@ nav{
     padding: 50px 40px;
 }
 
-.title{
+.header{
     font-size: 2rem;
     color: var(--contrasting);
     text-align: center;
@@ -217,9 +217,39 @@ nav{
     background-color: var(--background-darker);
 }
 
+/* INBOX REPLY */
+
+.inbox-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.message{
+    background-color: var(--background);
+    padding: 20px;
+    border-radius: 8px;
+    width: 60%;
+}
+
+.title{
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.desc{
+    color: var(--text);
+}
+
 /* MEDIA QUERIES */
 @media (max-width: 1000px){
     .indiv-detail{
+        width: 70%;
+    }
+
+    .message{
         width: 70%;
     }
 }
@@ -234,6 +264,10 @@ nav{
     }
 
     .indiv-detail{
+        width: 100%;
+    }
+
+    .message{
         width: 100%;
     }
 }
