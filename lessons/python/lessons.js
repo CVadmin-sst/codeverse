@@ -26,16 +26,7 @@ const database = getDatabase(app);
 const auth = getAuth();
 
 // Initialize elements
-let lesson1 = document.getElementById("lesson-1");
-let lesson2 = document.getElementById("lesson-2");
-let lesson3 = document.getElementById("lesson-3");
-let lesson4 = document.getElementById("lesson-4");
-let lesson5 = document.getElementById("lesson-5");
-let lesson6 = document.getElementById("lesson-6");
-let lesson7 = document.getElementById("lesson-7");
-let lesson8 = document.getElementById("lesson-8");
-let lesson9 = document.getElementById("lesson-9");
-let lesson10 = document.getElementById("lesson-10");
+let lessonLinks = document.getElementsByClassName("link");
 
 // Other useful variables
 let pythonLessonNo;
@@ -49,65 +40,12 @@ onAuthStateChanged(auth, async () => {
         if (snapshot.exists()) {
             pythonLessonNo = snapshot.val().pythonCourseProgress;
   
-            if (pythonLessonNo > 0) {
-                lesson1.innerText = "Lesson 1";
-                lesson1.classList.add("unlock");
-                lesson1.href = "lesson1.html";
-                lesson1.style.cursor = "pointer";
-            }
-            if (pythonLessonNo > 1) {
-                lesson2.innerText = "Lesson 2";
-                lesson2.classList.add("unlock");
-                lesson2.href = "lesson2.html";
-                lesson2.style.cursor = "pointer";
-            }
-            if (pythonLessonNo > 2) {
-                lesson3.innerText = "Lesson 3";
-                lesson3.classList.add("unlock");
-                lesson3.href = "lesson3.html";
-                lesson3.style.cursor = "pointer";
-            }
-            if (pythonLessonNo > 3) {
-                lesson4.innerText = "Lesson 4";
-                lesson4.classList.add("unlock");
-                lesson4.href = "lesson4.html";
-                lesson4.style.cursor = "pointer";
-            }
-            if (pythonLessonNo > 4) {
-                lesson5.innerText = "Lesson 5";
-                lesson5.classList.add("unlock");
-                lesson5.href = "lesson5.html";
-                lesson5.style.cursor = "pointer";
-            }
-            if (pythonLessonNo > 5) {
-                lesson6.innerText = "Lesson 6";
-                lesson6.classList.add("unlock");
-                lesson6.href = "lesson6.html";
-                lesson6.style.cursor = "pointer";
-            }
-            if (pythonLessonNo > 6) {
-                lesson7.innerText = "Lesson 7";
-                lesson7.classList.add("unlock");
-                lesson7.href = "lesson7.html";
-                lesson7.style.cursor = "pointer";
-            }
-            if (pythonLessonNo > 7) {
-                lesson8.innerText = "Lesson 8";
-                lesson8.classList.add("unlock");
-                lesson8.href = "lesson8.html";
-                lesson8.style.cursor = "pointer";
-            }
-            if (pythonLessonNo > 8) {
-                lesson9.innerText = "Lesson 9";
-                lesson9.classList.add("unlock");
-                lesson9.href = "lesson9.html";
-                lesson9.style.cursor = "pointer";
-            }
-            if (pythonLessonNo > 9) {
-                lesson10.innerText = "Lesson 10";
-                lesson10.classList.add("unlock");
-                lesson10.href = "lesson10.html";
-                lesson10.style.cursor = "pointer";
+            for(let i = 0; i <= pythonLessonNo; i++) {
+                let link = lessonLinks[i];
+                link.innerText = "Lesson " + i;
+                link.classList.add("unlock");
+                link.href = "lesson" + i + ".html";
+                link.style.cursor = "pointer";
             }
 
   

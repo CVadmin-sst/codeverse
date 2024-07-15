@@ -62,7 +62,7 @@ onAuthStateChanged(auth, async () => {
         for(let i = 0; i <= pythonLessonNo; i++) {
           let link = lessonLinks[i];
           link.innerText = "Lesson " + i;
-          link.classList.add("unlock");
+          link.classList.add("card-desc");
           link.href = "python/lesson" + i + ".html";
           link.style.cursor = "pointer";
         }
