@@ -161,7 +161,7 @@ submitBtn.addEventListener("click", () => {
     ansNo = 0;
 });
 
-
+// Verify questions
 const valQuestion = (questionInput, optionsList) => {
     var val= "";
     var correctAns = optionsList[currLessonNo];
