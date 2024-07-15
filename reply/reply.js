@@ -93,19 +93,3 @@ async function getUsersQuestions(){
     }
 }
 getUsersQuestions();
-
-/*
-submitButtons.forEach((e) => {
-    e.addEventListener("click", () => {
-        const respectiveReply = document.getElementById(e.id);
-        const questionsRef = ref(database, 'users/' + e.id + '/questions/');
-        set(questionsRef, {
-            question: "",
-            description: "",
-            reply: respectiveReply.value
-        })
-        window.alert("Reply updated");
-        respectiveReply.value = "";
-    })
-});
-*/
