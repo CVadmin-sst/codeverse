@@ -102,7 +102,7 @@ body{
 }
 
 #show-password:checked{
-    accent-color: var(--contrasting);
+    accent-color: var(--text);
 }
 
 .link{
