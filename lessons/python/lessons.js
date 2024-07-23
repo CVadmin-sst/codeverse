@@ -55,7 +55,7 @@ onAuthStateChanged(auth, async () => {
     })
 })
 
-//Initialise elements
+// Initialise elements
 let currLesson = document.getElementById("currLesson");
 let question1 = document.getElementsByName('question1');
 let question2 = document.getElementsByName('question2');
@@ -70,9 +70,9 @@ let correctAnsNo = 0, ansNo = 0;
 if (currLesson.innerText[-2] == " ") 
     { currLessonNo = parseInt(currLesson.innerText[-1])} 
 else { currLessonNo = parseInt(currLesson.innerText.slice(-2)) }
-let q1CorrectAnsList = ["option3", "option3", "option1", "option1", "option1", "option1", "option1", "option1", "option1", "option1", "option1"]
-let q2CorrectAnsList = ["option4", "option2", "option1", "option1", "option1", "option1", "option1", "option1", "option1", "option1", "option1"]
-let q3CorrectAnsList = ["noption", "noption", "option1", "option1", "option1", "option1", "option1", "option1", "option1", "option1", "option1"]
+let q1CorrectAnsList = ["option3", "option3", "option4", "option1", "noption", "noption", "noption", "noption", "noption", "noption", "noption"]
+let q2CorrectAnsList = ["option4", "option2", "option3", "option4", "noption", "noption", "noption", "noption", "noption", "noption", "noption"]
+let q3CorrectAnsList = ["noption", "noption", "option1", "option2", "noption", "noption", "noption", "noption", "noption", "noption", "noption"]
 // if any correct answer is "noption", it means that qN does not exist (eg. q3)
 
 // For later when doing lessons and user does one
@@ -118,3 +118,65 @@ const valQuestion = (questionInput, optionsList) => {
         correctAnsNo += 1;
     }
 }
+
+// Initialise elements
+let code;
+// code = document.getElementById('exercise-code').value; 
+// (moved to exercise function because when init it gets default value)
+let checkBtn = document.getElementById("exercise-check");
+let outputTxt = document.getElementById('exercise-output');
+
+// Initialise variables
+// currLessonNo is used
+let pyodideLoad = loadPyodide({ indexURL: "https://cdn.jsdelivr.net/pyodide/v0.18.1/full/" });
+let pythonRun;
+
+// Python code for exercise picker function
+const exerciseLessonCode = () => {
+    switch(currLessonNo) {
+        case 3:
+        pythonRun = `
+import sys
+from io import StringIO
+
+class Output:
+    def __init__(self):
+        self.output = ''
+    def write(self, s):
+        self.output += s
+    def flush(self):
+        pass
+
+output = Output()
+sys.stdout = output
+sys.stderr = output
+output1 = "10"
+output2 = "John Tan"
+sys.stdin = StringIO()
+sys.stdin.write(output1 + "\\n" + output2)
+sys.stdin.seek(0)
+${code}
+test_result = output.output.strip() == output2 + "\\n" + output1`
+        break;
+
+        default:
+            pythonRun = null;
+    }
+}
+
+// Exercise function
+checkBtn.addEventListener("click", async () => {
+    code = document.getElementById('exercise-code').value;
+    console.log("Loading Python...");
+    let pyodide = await pyodideLoad;
+    try {
+        exerciseLessonCode();
+        console.log("Running Python...");
+        pyodide.runPython(pythonRun);
+        console.log("Checking Result...");
+        let result = pyodide.globals.get("test_result");
+        outputTxt.innerText = result ? "Test passed\nCongratulations🎉" : "Test failed\nTry again";
+    } catch (error) {
+        outputTxt.innerText = error;
+    }
+});

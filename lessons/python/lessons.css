@@ -122,7 +122,8 @@ nav h1{
 
 .main-content{
     padding: 30px 50px;
-    background-color: var(--background-darker);
+    margin-bottom: 50px;
+    background-color: var(--background-dark);
 }
 
 .title{
@@ -143,22 +144,27 @@ video {
 
 /* QUESTIONS */
 
+.question-card {
+    margin-bottom: 30px;
+}
+
 .question {
     font-size: 1.3rem;
     color: var(--text);
     font-weight: 500;
-    margin: 10px 0;
+    margin: 7.5px 0 10px;
 }
 
 input[type=radio] {
-    margin-right: 5px;
+    margin: 0 5px;
 }
 
-form p{
+.main-content p{
     font-size: 1rem;
     color: var(--text);
     font-weight: 400;
-    margin: 5px;
+    white-space: pre-line;
+    margin: 5px 0;
 }
 
 button {
@@ -168,10 +174,23 @@ button {
     padding: 5px;
     border: 1.5px solid var(--text);
     border-radius: 10px;
-    margin-top: 20px;
+    margin-bottom: 20px;
     transition: all 0.3s ease;
 }
 
 button:hover, button:active {
     transform: translateY(-7.5px);
+}
+
+/* EXERCISE */
+
+textarea {
+    color: var(--text);
+    font-size: 1rem;
+    width: 50%;
+    height: 10rem;
+    background-color: var(--background-darker);
+    padding: 5px;
+    border: 1.5px solid var(--text);
+    border-radius: 10px;
 }
