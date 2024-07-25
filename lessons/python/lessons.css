@@ -90,8 +90,7 @@ nav h1{
     font-weight: 700;
     display: flex;
     align-items: center;
-
-    background-color: var(--background-darker);
+    background-color: transparent;
     margin: 30px 0;
     transition: all ease 0.3s;
 }
@@ -170,7 +169,7 @@ input[type=radio] {
 button {
     color: var(--text);
     font-size: 1.3rem;
-    background-color: var(--background-dark);
+    background-color: var(--background-darker);
     padding: 5px;
     border: 1.5px solid var(--text);
     border-radius: 10px;

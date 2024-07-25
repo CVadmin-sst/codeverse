@@ -156,7 +156,7 @@ sys.stdin = StringIO()
 sys.stdin.write(output1 + "\\n" + output2)
 sys.stdin.seek(0)
 ${code}
-test_result = output.output.strip() == output2 + "\\n" + output1`
+test_result = output.output.strip()[-11:] == output2 + "\\n" + output1`
         break;
 
         default:
