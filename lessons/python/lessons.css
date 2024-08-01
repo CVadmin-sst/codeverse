@@ -167,10 +167,10 @@ input[type=radio] {
 }
 
 button {
-    color: var(--text);
+    color: var(--background);
     font-size: 1.3rem;
-    background-color: var(--background-darker);
-    padding: 5px;
+    background-color: var(--text);
+    padding: 5px 25px;
     border: 1.5px solid var(--text);
     border-radius: 10px;
     margin-bottom: 20px;
@@ -178,7 +178,8 @@ button {
 }
 
 button:hover, button:active {
-    transform: translateY(-7.5px);
+    color: var(--text);
+    background-color: transparent;
 }
 
 /* EXERCISE */

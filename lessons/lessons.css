@@ -239,25 +239,32 @@ nav{
 }
 
 .card-btn {
-    color: var(--text);
-    font-size: 1rem;
-    background-color: var(--background-darker);
-    padding: 5px;
-    border: 1.5px solid var(--text);
+    text-decoration: none;
+    color: var(--background);
+    font-size: 1.1rem;
+    background-color: var(--contrasting);
+    padding: 5px 20px;
+    border: 1.5px solid var(--contrasting);
     border-radius: 10px;
-    margin: 10px 0;
+    margin-bottom: 10px;
     transition: all 0.3s ease;
 }
 
-.courses a{
+.card-btn:hover, .card-btn:active {
+    color: var(--contrasting);
+    background-color: transparent;
+}
+
+.lesson-link{
     text-decoration: none;
     color: var(--text);
     display: block;
     text-align: center;
+    margin: 2.5px;
     transition: all 0.3s ease;
 }
 
-.courses a.card-desc:hover, .courses a.card-desc:active{
+.lesson-link.card-desc:hover, .lesson-link.card-desc:active{
     text-decoration: underline;
     opacity: 0.6;
 }

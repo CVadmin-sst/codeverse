@@ -70,9 +70,9 @@ let correctAnsNo = 0, ansNo = 0;
 if (currLesson.innerText[-2] == " ") 
     { currLessonNo = parseInt(currLesson.innerText[-1])} 
 else { currLessonNo = parseInt(currLesson.innerText.slice(-2)) }
-let q1CorrectAnsList = ["option3", "option3", "option4", "option1", "noption", "noption", "noption", "noption", "noption", "noption", "noption"]
-let q2CorrectAnsList = ["option4", "option2", "option3", "option4", "noption", "noption", "noption", "noption", "noption", "noption", "noption"]
-let q3CorrectAnsList = ["noption", "noption", "option1", "option2", "noption", "noption", "noption", "noption", "noption", "noption", "noption"]
+let q1CorrectAnsList = ["option3", "option3", "option4", "option1", "option4", "noption", "noption", "noption", "noption", "noption", "noption"]
+let q2CorrectAnsList = ["option4", "option2", "option3", "option4", "option2", "noption", "noption", "noption", "noption", "noption", "noption"]
+let q3CorrectAnsList = ["noption", "noption", "option1", "option2", "option1", "noption", "noption", "noption", "noption", "noption", "noption"]
 // if any correct answer is "noption", it means that qN does not exist (eg. q3)
 
 // For later when doing lessons and user does one
@@ -82,7 +82,7 @@ submitBtn.addEventListener("click", () => {
     valQuestion(question3, q3CorrectAnsList);
 
     if (correctAnsNo == ansNo) {
-        submitMsg.innerText = "You got all questions correct! 👍 \nWell done! 😊 \nMove onto the next lesson!";
+        submitMsg.innerText = "You got all questions correct! \nMove onto the next lesson";
         nextLesson.style.display = "flex";
         currLessonNo += 1
 
@@ -92,7 +92,7 @@ submitBtn.addEventListener("click", () => {
         });
 
     } else {
-        submitMsg.innerText = "You got " + correctAnsNo + "/" + ansNo +  " questions correct. 😔 \n It's okay to fail, just try again. 😁\n You can do this! 👍";
+        submitMsg.innerText = "You got " + correctAnsNo + "/" + ansNo +  " questions correct. \nTry again";
     }
 
     correctAnsNo = 0;
@@ -175,7 +175,7 @@ checkBtn.addEventListener("click", async () => {
         pyodide.runPython(pythonRun);
         console.log("Checking Result...");
         let result = pyodide.globals.get("test_result");
-        outputTxt.innerText = result ? "Test passed\nCongratulations🎉" : "Test failed\nTry again";
+        outputTxt.innerText = result ? "Test passed\nCongratulations 🎉" : "Test failed\nTry again";
     } catch (error) {
         outputTxt.innerText = error;
     }

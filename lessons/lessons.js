@@ -79,8 +79,10 @@ pythonLessonsBtn.addEventListener("click", () => {
     case "inline":
       pythonLessons.style.display = "none";
       pythonLessonsBtn.innerText = "Show all lessons";
+      break;
     default:
       pythonLessons.style.display = "inline";
-    pythonLessonsBtn.innerText = "Hide all lessons";
+      pythonLessonsBtn.innerText = "Hide all lessons";
+      break;
   }
 })
