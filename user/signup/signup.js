@@ -59,7 +59,7 @@ signUp.addEventListener("click", async (e) => {
             });
 
             alert('User created! Please log in');
-            window.location.href = "login.html";
+            window.location.href = "../login/login.html";
         } catch (error) {
             console.error("Error creating user:", error);
             alert(error.message);
