@@ -1,0 +1,304 @@
+{
+    "type": "module",
+    "Lesson 0": [
+        {
+            "question": "What is this course about?",
+            "answer": "Learning python",
+            "options": [
+                "Making Videos",
+                "Playing flappy bird",
+                "None of the other options"
+            ]
+        },
+        {
+            "question": "What are some descriptions of python?",
+            "answer": "All of the other options",
+            "options": [
+                "It uses text",
+                "It has rules about how you write it",
+                "It is used to make programs"
+            ]
+        }
+    ],
+    "Lesson 1": [
+        {
+            "question": "How would you print \"Majulah Singapura!\"",
+            "answer": "print(\"Majulah Singapura!\")",
+            "options": [
+                "print(Majulah Singapura!)",
+                "print(\"Majulah Singapura\")",
+                "None of the other options"
+            ]
+        },
+        {
+            "question": "What is the syntax for writing comments?",
+            "answer": "#",
+            "options": [
+                "-",
+                "\"\"",
+                "comment()"
+            ]
+        }
+    ],
+    "Lesson 2": [
+        {
+            "question": "What are data types?",
+            "answer": "They are categories (types) that you store data in",
+            "options": [
+                "They are words that we print to the console",
+                "They are text boxes for the user to input",
+                "They are boxes that you push around"
+            ]
+        },
+        {
+            "question": "What is the datatype of this: 0.25",
+            "answer": "Float",
+            "options": [
+                "String",
+                "Integer",
+                "Boolean"
+            ]
+        },
+        {
+            "question": "What is the data type of this: \"True\" ",
+            "answer": "String",
+            "options": [
+                "Integer",
+                "Float",
+                "Boolean"
+            ]
+        }
+    ],
+    "Lesson 3": [
+        {
+            "question": "What is the value of number? <p>number = int(161.803)</p>",
+            "answer": "161",
+            "options": [
+                "161.8",
+                "162",
+                "161.803"
+            ]
+        },
+        {
+            "question": "The following code is run: <p>myVariable = 25 \nmyVariable = \"timmy\" \nmyVariable = 10 \nmyVariable = \"10\" </p>What is the value of myVariable at the end?",
+            "answer": "\"10\"",
+            "options": [
+                "25",
+                "\"timmy\"",
+                "10"
+            ]
+        },
+        {
+            "question": "The following code is run: <p>chocolate = input(\"How many chocolates are there?\") \ncherries = chocolate \nchocolate = 256 \nprint(chocolate) </p>What prints at the end?",
+            "answer": "\"256\"",
+            "options": [
+                "\"How many chocolates are there?\"",
+                "\"cherries\"",
+                "It depends on what the user put in"
+            ]
+        }
+    ],
+    "Lesson 4": [
+        {
+            "question": "What is the value of number? <p>number = 98 - 10 * (3+2) / 8</p>",
+            "answer": "91.75",
+            "options": [
+                "29.5",
+                "6",
+                "55"
+            ]
+        },
+        {
+            "question": "The following code is run: <p>num = 200 \nnum += 50 \nnum *= 4 \nnum /= 100 \nnum -= 5 \nprint(num) </p>What is printed?",
+            "answer": "5",
+            "options": [
+                "1000",
+                "250",
+                "10"
+            ]
+        },
+        {
+            "question": "The following code is run: <p>a = int(input(\"put in a number\")) \na -= 5 \nb = 100 \nb += a </p> What is the value of b in the end?",
+            "answer": "95 more than what the user put in",
+            "options": [
+                "100",
+                "100 more than what the user put in",
+                "5"
+            ]
+        }
+    ],
+    "Lesson 5": [
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        },
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        },
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        }
+    ],
+    "Lesson 6": [
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        },
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        },
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        }
+    ],
+    "Lesson 7": [
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        },
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        },
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        }
+    ],
+    "Lesson 8": [
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        },
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        },
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        }
+    ],
+    "Lesson 9": [
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        },
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        },
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        }
+    ],
+    "Lesson 10": [
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        },
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        },
+        {
+            "question": "question",
+            "answer": "ans",
+            "options": [
+                "option0",
+                "option1",
+                "option2"
+            ]
+        }
+    ]
+}

@@ -25,6 +25,9 @@ const analytics = getAnalytics(app);
 const database = getDatabase(app);
 const auth = getAuth();
 
+// Import database
+import lessonJson from './lessons.json' with {type: 'json'};
+
 // Initialize elements
 let lessonLinks = document.getElementsByClassName("link");
 
@@ -38,8 +41,7 @@ onAuthStateChanged(auth, async () => {
     get(userRef)
       .then((snapshot) => {
         if (snapshot.exists()) {
-            pythonLessonNo = snapshot.val().pythonCourseProgress;
-  
+            pythonLessonNo = snapshot.val().pythonCourseProgress; 
             for(let i = 0; i <= pythonLessonNo; i++) {
                 let link = lessonLinks[i];
                 link.innerText = "Lesson " + i;
@@ -47,77 +49,105 @@ onAuthStateChanged(auth, async () => {
                 link.href = "lesson" + i + ".html";
                 link.style.cursor = "pointer";
             }
-
-  
         } else {
             console.log("user not found");
         }
     })
 })
 
-// Initialise elements
-let currLesson = document.getElementById("currLesson");
-let question1 = document.getElementsByName('question1');
-let question2 = document.getElementsByName('question2');
-let question3 = document.getElementsByName('question3');
+// Initalise elements
+let currLesson = document.getElementById("currLesson").innerText.slice(7);
+let QQns= [
+    document.getElementById("q1qn"),
+    document.getElementById("q2qn"),
+    document.getElementById("q3qn")
+]
+let qns = [
+    document.getElementsByName("q1"),
+    document.getElementsByName("q2"),
+    document.getElementsByName("q3")
+]
+let ops = [
+    document.getElementsByName("op1"),
+    document.getElementsByName("op2"),
+    document.getElementsByName("op3")
+]
+
+let ansArray = []
+
+let load = async () => {
+    let lessonData;
+    let currLessonData = lessonJson[currLesson];
+    for(let i = 0, length = currLessonData.length; i < length; i++) {
+        lessonData = currLessonData[i]
+        QQns[i].innerHTML = lessonData.question;
+        ansArray.push([false, false, false, false]);
+        ansArray[i][Math.floor(Math.random() * 4)] = true;
+        let unusedIndex = [];
+        let currIndex = -1;
+        for(let j = 0; j < 4; j++) {
+            let currQn = qns[i][j];
+            let currOp = ops[i][j];
+            currQn.id = currOp.htmlFor = "q" + [i] + "op" + [j];
+            if (ansArray[i][j]) {
+                currOp.innerText = lessonData.answer;
+            } else {
+                do { 
+                    currIndex = Math.floor(Math.random() * 3);
+                } while (unusedIndex.indexOf(currIndex) != -1)
+                currOp.innerText = lessonData.options[currIndex];
+                unusedIndex.push(currIndex);
+            }
+        }
+    }
+}
+load();
+
+// Initalise elements
 let submitBtn = document.getElementById("submit");
 let submitMsg = document.getElementById("submit-msg");
 let nextLesson = document.getElementById("next-lesson");
 
-// Initialise variables
+// Initalise variables
 let currLessonNo;
-let correctAnsNo = 0, ansNo = 0;
-if (currLesson.innerText[-2] == " ") 
-    { currLessonNo = parseInt(currLesson.innerText[-1])} 
-else { currLessonNo = parseInt(currLesson.innerText.slice(-2)) }
-let q1CorrectAnsList = ["option3", "option3", "option4", "option1", "option4", "noption", "noption", "noption", "noption", "noption", "noption"]
-let q2CorrectAnsList = ["option4", "option2", "option3", "option4", "option2", "noption", "noption", "noption", "noption", "noption", "noption"]
-let q3CorrectAnsList = ["noption", "noption", "option1", "option2", "option1", "noption", "noption", "noption", "noption", "noption", "noption"]
-// if any correct answer is "noption", it means that qN does not exist (eg. q3)
+if (currLesson == " ") 
+    { currLessonNo = parseInt(currLesson[-1])} 
+else { currLessonNo = parseInt(currLesson.slice(-2)) }
 
-// For later when doing lessons and user does one
 submitBtn.addEventListener("click", () => {
-    valQuestion(question1, q1CorrectAnsList);
-    valQuestion(question2, q2CorrectAnsList);
-    valQuestion(question3, q3CorrectAnsList);
-
-    if (correctAnsNo == ansNo) {
-        submitMsg.innerText = "You got all questions correct! \nMove onto the next lesson";
-        nextLesson.style.display = "flex";
-        currLessonNo += 1
-
-        const user = auth.currentUser;
-        update(ref(database, 'users/' + user.uid), {
-            pythonCourseProgress: currLessonNo
-        });
-
-    } else {
-        submitMsg.innerText = "You got " + correctAnsNo + "/" + ansNo +  " questions correct. \nTry again";
-    }
-
-    correctAnsNo = 0;
-    ansNo = 0;
-});
-
-// Verify questions
-const valQuestion = (questionInput, optionsList) => {
-    var val= "";
-    var correctAns = optionsList[currLessonNo];
-    if (correctAns != "noption") {
-        ansNo += 1;
-    }
-
-    for (var i = 0, length = questionInput.length; i < length; i++) {
-        if (questionInput[i].checked) {
-            val = questionInput[i].value;
-            break;
+    let rightAns = []
+    for (var i = 0, length = ansArray.length; i < length; i++) {
+        for (var j = 0, len = ansArray.flat().length; j < len; j++) {
+            let currAns = ansArray[i][j];
+            let currQn = qns[i][j];
+            if (currAns && currQn.checked) {
+                rightAns.push("question " + (i+1))
+            }
         }
     }
+    switch (rightAns.length) {
+        case ansArray.length:
+            submitMsg.innerText = "You got all questions correct! \nMove onto the next lesson";
+            nextLesson.style.display = "flex";
 
-    if ( val == correctAns ) {
-        correctAnsNo += 1;
+            if (pythonLessonNo == currLessonNo) {
+                const user = auth.currentUser;
+                update(ref(database, 'users/' + user.uid), {
+                    pythonCourseProgress: (currLessonNo + 1)
+                });
+            }
+            break;
+        case 1:
+            submitMsg.innerText = "You got " + rightAns[0] + " correct. \nTry again.";
+            break;
+        case 0:
+            submitMsg.innerText = "You got 0 questions correct. \nTry again.";
+            break;
+        default:
+            submitMsg.innerText = "You got " + rightAns[0] + " and " + rightAns[1] + " correct. \nTry again.";
+            break;
     }
-}
+})
 
 // Initialise elements
 let code;
@@ -138,25 +168,13 @@ const exerciseLessonCode = () => {
         pythonRun = `
 import sys
 from io import StringIO
-
-class Output:
-    def __init__(self):
-        self.output = ''
-    def write(self, s):
-        self.output += s
-    def flush(self):
-        pass
-
-output = Output()
-sys.stdout = output
-sys.stderr = output
 output1 = "10"
 output2 = "John Tan"
 sys.stdin = StringIO()
 sys.stdin.write(output1 + "\\n" + output2)
 sys.stdin.seek(0)
 ${code}
-test_result = output.output.strip()[-11:] == output2 + "\\n" + output1`
+test_result = sys.stdout.strip()[-11:] == output2 + "\\n" + output1`
         break;
 
         default:

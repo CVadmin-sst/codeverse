@@ -194,10 +194,6 @@ nav{
     padding: 30px;
     background-color: var(--background);
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     max-height: 500px;
     border: 1.5px solid transparent;
     overflow-y: scroll;
@@ -205,11 +201,19 @@ nav{
     transition: all 0.3s ease;
 }
 
+.card > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
 .card:hover, .card:active{
     border-color: var(--text);
 }
 
-.card > i{
+.card > div > i{
     font-size: 9rem;
     padding: 20px;
     border-radius: 10px;
