@@ -129,30 +129,30 @@
     ],
     "Lesson 5": [
         {
-            "question": "question",
-            "answer": "ans",
+            "question": "The following code is run: <p>home = False \nif home == True: \n &emsp;print(\"At home\") \n else if home == False: \n &emsp;print(\"Not at home\") </p>What prints out?",
+            "answer": "It gives an error",
             "options": [
-                "option0",
-                "option1",
-                "option2"
+                "Nothing prints out",
+                "\"At home\"",
+                "\"Not at home\""
             ]
         },
         {
-            "question": "question",
-            "answer": "ans",
+            "question": "The following code is run: <p>cookies = 10 \ncookies += 5 \ncookies -=7 \nif cookies == 0: \n &emsp;print(\"There are no cookies\") \nelif cookies == 7: \n &emsp;print(\"There are 7 cookies\") \nelse: \n&emsp;print(\"There are neither 7 nor 0 cookies\") </p>What prints out?",
+            "answer": "\"There are neither 7 nor 0 cookies\"",
             "options": [
-                "option0",
-                "option1",
-                "option2"
+                "\"There are no cookies\"",
+                "\"There are 7 cookies\"",
+                "Nothing prints out"
             ]
         },
         {
-            "question": "question",
-            "answer": "ans",
+            "question": "The following code has an error. What is it? <p>color = 'blue' \nif color == \"red\" \n &emsp;print(\"Color is red\") \nelif color == \"blue\": \n &emsp;print(\"Color is blue\") </p>",
+            "answer": "Missing colon : after \"red\" at line 2",
             "options": [
-                "option0",
-                "option1",
-                "option2"
+                "Single quotation marks ' when declaring color at line 1",
+                "Double equals sign == at line 2 and line 4",
+                "There is a tab (4 spaces) before the print statements at line 3 and 5"
             ]
         }
     ],
