@@ -158,30 +158,30 @@
     ],
     "Lesson 6": [
         {
-            "question": "question",
-            "answer": "ans",
+            "question": "What prints out? <p>print(120 / 6 < 20) </p>",
+            "answer": "\"False\"",
             "options": [
-                "option0",
-                "option1",
-                "option2"
+                "\"True\"",
+                "\"true\"",
+                "\"false\""
             ]
         },
         {
-            "question": "question",
-            "answer": "ans",
+            "question": "The following code is run: <p> day = \"Monday\" \nif day == \"Saturday\" or day == \"Sunday\": \n &emsp;print(\"It's the weekend!\") \nelse: \n &emsp;print(\"It's a weekday.\") </p>What prints out?",
+            "answer": "\"It's a weekday.\"",
             "options": [
-                "option0",
-                "option1",
-                "option2"
+                "\"It's the weekend!\"",
+                "A type error occurs",
+                "A value error occurs"
             ]
         },
         {
-            "question": "question",
-            "answer": "ans",
+            "question": "The following code is run: <p> roomA = 10 \nroomB = 15 \nroomA += 3 \nroomB -= 5 \nif roomA < roomB: \n &emsp;print(\"Room A has\" + (roomB - roomA) + \" less people than room B\") \nelif roomA > roomB: \n &emsp;print(\"Room A has\" + (roomA - roomB) + \" more people than room B\")",
+            "answer": "Room A has 3 more people than room B",
             "options": [
-                "option0",
-                "option1",
-                "option2"
+                "Room A has 2 more people than room B",
+                "Room A has 3 less people than room B",
+                "Room A has 2 less people than room B"
             ]
         }
     ],
