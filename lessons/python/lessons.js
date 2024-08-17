@@ -174,7 +174,8 @@ sys.stdin = StringIO()
 sys.stdin.write(output1 + "\\n" + output2)
 sys.stdin.seek(0)
 ${code}
-test_result = sys.stdout.strip()[-11:] == output2 + "\\n" + output1`
+output = str(sys.stdout)
+test_result = output.strip()[-11:] == output2 + "\\n" + output1`
         break;
 
         default:
@@ -194,6 +195,7 @@ checkBtn.addEventListener("click", async () => {
         console.log("Checking Result...");
         let result = pyodide.globals.get("test_result");
         outputTxt.innerText = result ? "Test passed\nCongratulations 🎉" : "Test failed\nTry again";
+        console.log(result = pyodide.globals.get("output"))
     } catch (error) {
         outputTxt.innerText = error;
     }
