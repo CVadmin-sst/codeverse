@@ -109,7 +109,7 @@ nav h1{
     transition: all ease 0.3s;
     text-decoration: none;
     color: var(--text);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     cursor: default;
 }
 
@@ -193,6 +193,21 @@ textarea {
     padding: 5px;
     border: 1.5px solid var(--text);
     border-radius: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    body {
+        width: 80%;
+    }
+
+    .menu {
+        width: 20%;
+    }
+
+    .arrow, .link {
+        font-size: 1.4rem;
+    }
+    
 }
 
 @media screen and (max-width: 850px) {
