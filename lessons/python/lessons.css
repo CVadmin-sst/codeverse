@@ -194,3 +194,31 @@ textarea {
     border: 1.5px solid var(--text);
     border-radius: 10px;
 }
+
+@media screen and (max-width: 1200px) {
+    body {
+        width: 100%;
+    }
+
+    .menu {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        position: static;
+        box-shadow: none;
+    }
+
+    .arrow {
+        margin: 15px 0;
+    }
+
+    .menu-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .link {
+        font-size: 1.2rem;
+    }
+}
